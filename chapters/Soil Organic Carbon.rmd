@@ -5,7 +5,7 @@ Soil organic carbon  (SOC) stocks are estimates of the total mass of  SOC in tot
 General Information about this query:
    * Uses all components with horizon data.
    * Does not calculate component SOC below the following component restrictions:
-   * Lithic bedrock, Paralithic bedrock, Densic bedrock, Fragipan, Duripan, Sulfuric, Petrocalcic and Petroferic 
+   	* * Lithic bedrock, Paralithic bedrock, Densic bedrock, Fragipan, Duripan, Sulfuric, Petrocalcic and Petroferic 
    * Layer SOC stock =  ( (hzT * ( ( om / 1.724 ) * db3 )) / 100.0 ) * ((100.0 - fragvol) / 100.0)
    * Areasymbol listed twice in the script for Entire SSURGO use "areasymbol  <> 'US'" OR STATSGO use "areasymbol = 'US'"
    
@@ -38,7 +38,7 @@ Component variables used in SOC stock calculation (r denotes that the value is r
 Layer variables used in SOC stock calculation (r denotes that the value is representative of the central tendency):
    * hzdept_r  = top depth of layer
    * hzdepb = bottom depth of layer
-   * om_r = layer organic matter (%) content. US soil survey databases report OM (NSSH, 2017 )this is typically based on measurement of total combustion carbon and calcium carbonate concentration by calcimeter (KSSL, 2014). 
+   * om_r = layer organic matter (%) content. US soil survey databases report OM (NSSH Part 618.43 )this is typically based on measurement of total combustion carbon and calcium carbonate concentration by calcimeter (KSSL, 2017). 
    * dbthirdbar_r = bulk density represting field conditions. US soil survey bases this on a clod measurement of volume at 1/3 bar and weight at oven dry water content (KSSL, 2014) 
    * fragvol_r = Volume of coarse fragments (>2mm in size), typically based on visual estimates
 
@@ -365,7 +365,17 @@ RIGHT OUTER JOIN #main ON #main.mukey=#SOC4.mukey
 |2809839|25|
 
 
+##Sources and Citation
+The data source of this data is the STATSGO and SSURGO data from the US National Cooperative Soil Survey.  The following references cover data definitions, derivation and quality procedures.
 
+*NSSH* - U.S. Department of Agriculture, Natural Resources Conservation Service. National soil survey handbook, title 430-VI. 			http://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/ref/?cid=nrcs142p2_054242 (accessed day month year).
+
+*KSSL* - Laboratory Methods Manual (SSIR 42), version 5, 2014 (PDF; 6.29 MB)
+
+*SDA* - Soil Data Access, portal to soil survey products
+	*SSURGO* data: Soil Survey Staff, Natural Resources Conservation Service, United States Department of Agriculture. 
+	Soil Survey Geographic (SSURGO) Database. Available online at https://sdmdataaccess.sc.egov.usda.gov.  Accessed [October/12/2017]. 
+	*STATSGO* data: Soil Survey Staff, Natural Resources Conservation Service, United States Department of Agriculture. U.S. General 	Soil Map (STATSGO2). Available online at https://sdmdataaccess.sc.egov.usda.gov.  Accessed [October/12/2017].
 
 
 
